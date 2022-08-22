@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="../public/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" >
+    <style>
+		h1 {
+			color: rgb(0, 0, 0);
+			text-align: center;
+		}
+		div {
+			margin-top: 10px;
+		}
+	</style>
+
+</head>
+<body>
+    <div class="container-incidents">
+      <form action="/searchIncidents"  >
+   <h3>SEARCH INCIDENTS</h3>
+   
+    <hr>
+  
+    <label for="Number"><b>TT_Number</b></label>
+    <input type="text" placeholder="Enter TT_Number" name="TT_Number" id="TT_Number" required>
+
+    <label for="Date"><b>Date</b></label>
+    <input type="date" value="2017-06-01">
+
+
+    <button type="submit" class="registerbtn">SEACRH INCIDENTS</button>
+    <a href="./" style="color:black">BACK TO HOME PAGE</a>
+    
+
+    <br>
+      {{#if mesg1}}
+      <h3>Data found !</h3>
+
+      <div class="container-answer"> 
+
+          <div>
+		<div class="link-btn">
+		</div>
+		<!-- table-responsive -->
+		<div class="table-responsive">
+			<!-- table -->
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">TT_Number</th>
+                        <th scope="col">ALARM_TIME</th>
+                        <th scope="col">SITES</th>
+                        <th scope="col">SITES_IMPACTED</th>
+                        <th scope="col">ALARM</th>
+                        <th scope="col">ESCALADE</th>
+                        <th scope="col">ROOT_CAUSE</th>
+                        <th scope="col">ACTION_DONE</th>
+                        <th scope="col">CANCEL_TIME</th>
+                        <th scope="col">DURATION</th>
+                        <th scope="col">STATUS</th>
+					
+					</tr>
+				</thead>
+				<tbody>
+                {{#data}}
+                    <tr>
+        <td>{{TT_Number}}</td>
+        <td>{{ALARM_TIME}}</td>
+        <td>{{SITES}}</td>
+        <td>{{SITES_IMPACTED}}</td>
+        <td>{{ALARM}}</td>
+        <td>{{ESCALADE}}</td>
+        <td>{{ROOT_CAUSE}}</td>
+        <td>{{ACTION_DONE}}</td>
+        <td>{{CANCEL_TIME}}</td>
+        <td>{{DURATION}}</td>
+        <td>{{STATUS}}</td>
+    </tr>
+    {{/data}}
+    
+                </tbody>
+			</table>
+		</div>
+		
+	</div>
+
+
+        {{/if}}
+
+      {{#if mesg2}}
+      <h3>Data Not Found!</h3>
+      {{/if}}
+    </form>
+  </div>
+</body>
+</html>

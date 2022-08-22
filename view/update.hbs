@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="">
+      <form action="/updateIncidents">
+   <h3>SEARCH INCIDENTS</h3>
+   
+    <hr>
+ 
+    <label for="Number"><b>TT_Number</b></label>
+    <input type="text" style="width:200px;" placeholder="Enter TT_Number" name="TT_Number" id="TT_Number" required>
+
+    <button type="submit" class="registerbtn">SEACRH INCIDENTS</button>
+    <a href="./" style="color:rgb(56, 65, 120)">BACK TO HOME PAGE</a>
+
+    <br>
+   
+ {{#if umesg}}
+     <h3>Data updated!</h3>
+     {{/if}}
+
+     
+     {{#if mesg2}}
+     <h3>Data Not Found!</h3>
+     {{/if}}
+    </form>
+  </div>
+
+<!--Search form design end-->
+
+{{#if mesg1}}
+       <div class="container">
+       <form action="/updateIncidents"  >
+   <h3>UPDATE INCIDENTS</h3>
+   
+    <hr>
+{{#data}}
+    <label for="Number"><b>TT_Number</b></label>
+    <input type="text" placeholder="Enter TT_Number" name="TT_Number" id="TT_Number" required>
+
+      <label for="START_TIME">ALARM_TIME</label>
+<input id="ALARM_TIME" type="datetime-local" name="ALARM_TIME" value="2017-06-01T08:30">
+
+
+    <label for="SITE"><b>SITES</b></label>
+    <input type="text" placeholder="Enter the name of the site" name="SITES" id="SITES" required>
+
+    <label for="SITE_IMPACTED"><b>SITES_IMPACTED</b></label>
+    <input type="text" placeholder="Enter the name of the  SITES_IMPACTED" name="SITES_IMPACTED" id="SITES_IMPACTED" required>
+
+
+    <label for="AL"><b>ALARM</b></label>
+    <input type="text" placeholder="Enter the name of the  ALARM" name="ALARM" id="ALARM" required>
+
+    <label for="ESC"><b>ESCALADE</b></label>
+    <input type="text" placeholder="Enter the name of the  ESCALADE" name="ESCALADE" id="ESCALADE" required>
+
+    <label for="CAUSE"><b>ROOT_CAUSE</b></label>
+    <input type="text" placeholder="Enter the information about the cause of the incidents" name="ROOT_CAUSE" id="ROOT_CAUSE" required>
+
+<label for="ACTION"><b>ACTION_DONE</b></label>
+    <input type="text" placeholder="Enter the solution to solve the problem" name="ACTION_DONE" id="ACTION_DONE" required>
+
+ <label for="END_TIME">CANCEL_TIME</label>
+<input id="CANCEL_TIME" type="datetime-local" name="CANCEL_TIME" value="2017-06-01T08:30">
+
+<label for="TIME">DURATION</label>
+
+<input type="time" id="DURATION" name="DURATION"
+       min="09:00" max="18:00" required>
+
+   
+  <div class="STATUS_S">
+     <strong>STATUS</strong>
+     <input type="radio" name="STATUS" id="" value="OPENED"> OPENED
+     <input type="radio" name="STATUS" id=""  value="CLOSED"> CLOSED
+    <button type="submit" class="registerbtn">UPDATE INCIDENTS</button>
+{{/data}}
+  
+    <a href="./" style="color:black">BACK TO HOME PAGE</a> <br>
+     
+    
+</form>
+</div>
+     
+      {{/if}}      
+</body>
+</html>

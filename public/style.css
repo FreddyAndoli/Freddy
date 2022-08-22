@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+}
+
+
+/* Add padding to containers */
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(204, 230, 238);
+    position: relative;
+}
+
+
+
+.container-incidents {
+    background-color: rgb(255, 148, 109);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10px;
+    
+}
+
+
+.container {
+    background-color: rgb(255, 148, 109);
+    width: 500px;
+    position: absolute;
+    left: 35%;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10px;
+    ;
+}
+
+
+/* Full-width input fields */
+
+input[type=text],
+input[type=datetime-local],
+input[type=time] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #fdfbfb;
+}
+
+input[type=text]:focus,
+input[type=datetime-local]:focus,
+input[type=time]:focus {
+    background-color: rgb(255, 254, 254);
+    outline: none;
+}
+
+
+/* Set a style for the submit button */
+
+.registerbtn {
+    background-color: #4083e2;
+    color: white;
+    margin: 8px 0;
+    padding: 6px 8px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+    border-radius: 10px 10px 10px 10px;
+}
+
+
+
+
+/* Add a blue text color to links */
+
+a {
+    color: dodgerblue;
+}
+
+
+/* Set a grey background color and center the text of the "sign in" section */
+
+.signin {
+    background-color: #777474;
+    text-align: center;
+}
+
+.STATUS_S {
+    display: flex;
+}
